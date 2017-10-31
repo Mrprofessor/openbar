@@ -26,7 +26,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit} style={{ marginTop: '2rem' }}>
                     <Grid textAlign='center'>
                         <Grid.Row>
                             <Grid.Column width={12}>

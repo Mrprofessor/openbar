@@ -4,14 +4,13 @@ import { Container, Grid, Card, Icon, Image} from 'semantic-ui-react';
 class ShowItems extends Component {
 	constructor(props) {
 		super(props);
-
 		this.createItems = this.createItems.bind(this);
 	}
 	createItems(item){
 		return (<Grid.Column style={{ marginTop: '1rem' }} key={item.restaurant.id}
-		mobile={16} tablet={8} computer={4} >
-					<Card>
-					    <Image src={item.restaurant.featured_image} />
+			mobile={16} tablet={8} computer={5} >
+					<Card centered >
+				<Image src={item.restaurant.featured_image} centered/>
 			    		<Card.Content>
 					    	<Card.Header>
 					        	{item.restaurant.name}
@@ -39,7 +38,7 @@ class ShowItems extends Component {
 		console.log(this.props.bars);
 		return(
 			<Container style={{marginTop : '5%'}} >
-				<Grid verticalAlign='middle'>
+				<Grid verticalAlign='middle' stackable>
 				{/*	<Grid.Row>
 						{showBars}
 					</Grid.Row> */}
@@ -50,5 +49,4 @@ class ShowItems extends Component {
 		);
 	}
 }
-
 export default ShowItems

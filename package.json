@@ -18,5 +18,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://mrprofessor.github.io/tubesearch"
+  "homepage": "http://mrprofessor.github.io/openbar"
 }

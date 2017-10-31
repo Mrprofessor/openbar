@@ -42,7 +42,7 @@ class App extends Component {
 	getDetails(data) {
 		const cityID = data.location_suggestions[0].city_id;
 		const locationType = data.location_suggestions[0].entity_type;
-		let url = `https://developers.zomato.com/api/v2.1/search?entity_id=${cityID}&entity_type=city&count=100&category=11`;
+		let url = `https://developers.zomato.com/api/v2.1/search?entity_id=${cityID}&entity_type=city&count=100&category=11&start=0&count=40`;
 		fetch(url, this.options)
 			.then((res) => {
 				return res.json();
@@ -75,7 +75,7 @@ class App extends Component {
 							Openbar
 						</Header.Content>
 					</Header>
-					<Divider />
+					{/* <Divider /> */}
 					<SearchBar search={this.searchBars}/>
 					{ShowBars}
 				</Container>

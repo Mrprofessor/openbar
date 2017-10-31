@@ -8,28 +8,28 @@ class ShowItems extends Component {
 		this.createItems = this.createItems.bind(this);
 	}
 	createItems(item){
-		return (<Grid.Column style={{ marginTop: '1rem' }} key={item.restaurant.id}>
+		return (<Grid.Column style={{ marginTop: '1rem' }} key={item.restaurant.id}
+		mobile={16} tablet={8} computer={4} >
 					<Card>
-						<Image src='/assets/images/avatar/large/matthew.png' />
-						<Card.Content>
-							<Card.Header>
-								{item.restaurant.name}
-							</Card.Header>
-							<Card.Meta>
-								<span className='date'>
-									{item.restaurant.location.locality}	
-								</span>
-							</Card.Meta>
-							<Card.Description>
-								Matthew is a musician living in Nashville.
-							</Card.Description>
-						</Card.Content>
-						<Card.Content extra>
-							<a>
-								<Icon name='user' />
-								22 Friends
-							</a>
-						</Card.Content>
+					    <Image src={item.restaurant.featured_image} />
+			    		<Card.Content>
+					    	<Card.Header>
+					        	{item.restaurant.name}
+			    			</Card.Header>
+				    		<Card.Meta>
+				    		<span className='date'>
+				        		{item.restaurant.location.locality}
+				        	</span>
+				    		</Card.Meta>
+				    		<Card.Description>
+				    			{item.restaurant.cuisines}
+				    		</Card.Description>
+			    		</Card.Content>
+					    <Card.Content extra>
+					    	<a href={item.restaurant.events_url} target="_blank" >
+					        	<Icon name='arrow right' /> Go there  
+					    	</a>
+					    </Card.Content>
 					</Card>
 		</Grid.Column>
 		);
@@ -38,11 +38,12 @@ class ShowItems extends Component {
 		let showBars = this.props.bars.map(this.createItems);
 		console.log(this.props.bars);
 		return(
-			<Container style={{marginTop : '5%'}}>
-				<Grid verticalAlign='middle' columns={3} >
-					<Grid.Row>
+			<Container style={{marginTop : '5%'}} >
+				<Grid verticalAlign='middle'>
+				{/*	<Grid.Row>
 						{showBars}
-					</Grid.Row>
+					</Grid.Row> */}
+					{showBars}
 				</Grid>
 			</Container>
 				
@@ -50,4 +51,4 @@ class ShowItems extends Component {
 	}
 }
 
-export default ShowItems;
+export default ShowItems
